@@ -85,6 +85,10 @@ h1, h2, h3 {
 }
 
 .container {
+  max-width: 1400px;
+  width: calc(100% - 200px);
+  margin: 0 auto;
+  padding: 0 15px;
   text-align: center;
   font-weight: bold;
 }
@@ -96,6 +100,9 @@ h1, h2, h3 {
 .container p {
   font-size: 1.4em;
   font-weight: bold;
+}
+.container p, .description {
+  line-height: 1.6;
 }
 
 .title{
@@ -147,6 +154,24 @@ h1, h2, h3 {
     width: 210px;
     height: auto;
 }
+
+.img1, .img2, .img3 {
+  max-width: 100%;
+  width: 100%;  /* 容器撑满父元素 */
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  justify-content: center;
+  gap: 10px;
+}
+
+.img1 img, .img2 img, .img3 img {
+  width: 100%; /* 宽度随容器 */
+  max-width: 300px; /* 限制最大宽度 */
+  height: auto;
+  flex-shrink: 1; /* 允许缩小 */
+}
+
+
 .pencapaian.saintifik.utama .description{
     margin-left: 50px;
 }
@@ -164,27 +189,41 @@ footer{
 }
 
 @media (max-width: 768px) {
-  .side-nav {
-    position: relative;
-    width: 100%;
-    height: auto;
-    box-shadow: none;
-    padding-top: 10px;
-  }
+    .side-nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding-top: 10px;
+    }
 
-  .side-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
+    .side-nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
-  .side-nav ul li {
+    .side-nav ul li {
     margin: 10px;
-  }
+    }
 
-  .submenu {
-    position: static;
-    background-color: #555;
-  }
+    .submenu {
+        position: static;
+        background-color: #555;
+    }
+
+    body {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .img1, .img2, .img3 {
+        flex-direction: column; /* 垂直堆叠 */
+        align-items: center;
+    }
+    .container{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
