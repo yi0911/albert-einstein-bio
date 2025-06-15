@@ -162,3 +162,29 @@ footer{
     font-weight: bold;
     font-size: 1.2em;
 }
+
+@media (max-width: 768px) {
+  .side-nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    padding-top: 10px;
+  }
+
+  .side-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .side-nav ul li {
+    margin: 10px;
+  }
+
+  .submenu {
+    position: static;
+    background-color: #555;
+  }
+}
